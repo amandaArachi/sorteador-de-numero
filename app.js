@@ -28,11 +28,13 @@ function gerarNumeroAleatorio(min, max) {
 function alterarStatusBtn() {
     let botao = document.getElementById('btn-reiniciar');
     if(botao.classList.contains('container__botao-desabilitado')) {
-        botao.classList.remove('container__botao-desabilitado');
-        botao.classList.add('container__botao');
+        botao.classList.replace('container__botao-desabilitado', 'container__botao');
+        document.getElementById("btn-reiniciar").disabled = false;
+        document.getElementById("btn-sortear").disabled = true;
     } else {
-        botao.classList.remove('container__botao');
-        botao.classList.add('container__botao-desabilitado');
+        botao.classList.replace('container__botao', 'container__botao-desabilitado');
+        document.getElementById("btn-reiniciar").disabled = true;
+        document.getElementById("btn-sortear").disabled = false;
     }
 }
 
